@@ -12,7 +12,7 @@ const Home = () => {
       <Sidebar />
       <Profile />
 
-      <main className="flex-1 p-6 pt-8 md:ml-8 md:p-0 md:pt-8 overflow-x-hidden">
+      <main className="flex-1 p-6 pt-8 md:mr-8 md:p-0 md:pt-8 md:pl-8 overflow-x-hidden">
         <Hero />
         <Experience />
         <Certificate />
