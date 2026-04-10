@@ -41,7 +41,7 @@ const Hero = () => {
           mobile, ketertarikan saya pada ekosistem teknologi mendorong saya
           untuk terus mengeksplorasi stack web dan backend. Saya percaya bahwa
           wawasan fullstack membuat saya menjadi mobile engineer yang lebih
-          baik—tidak hanya paham cara membuat UI yang cantik, tapi juga mengerti
+          baik—tidak hanya paham cara membuat UI yang menarik, tapi juga mengerti
           bagaimana data mengalir di balik layar.
         </motion.p>
 
