@@ -47,7 +47,7 @@ const skillList: CardSkillProps[] = [
 
 export const Skill = () => {
   return (
-    <div className="md:px-48 p-6 md:py-24 transition-colors duration-300 dark:bg-slate-900">
+    <div className="md:px-24 lg:px-48 xl:px-48 p-6 md:py-24 transition-colors duration-300 dark:bg-slate-900 ">
       <div className="flex flex-col gap-2 md:w-2/3">
         <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
           Membangun Pengalaman <span className="text-emerald-600 dark:text-emerald-400">Digital</span>

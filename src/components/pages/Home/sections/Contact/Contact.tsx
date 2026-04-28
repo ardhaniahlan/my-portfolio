@@ -46,9 +46,9 @@ export const Contact = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-24 p-6 md:px-48 transition-colors duration-300 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-      <div className="flex justify-center flex-col items-center w-full gap-2 md:px-64 px-6 py-8 bg-slate-200 dark:bg-slate-800/50 rounded-2xl transition-colors duration-300">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white md:text-center transition-colors">
+    <div className="flex justify-center items-center py-24 p-6 md:px-24 lg:px-48 xl:px-48 transition-colors duration-300 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div className="flex justify-center flex-col items-center w-full gap-2 lg:px-48 md:px-24 xl:px-64 px-6 py-8 bg-slate-200 dark:bg-slate-800/50 rounded-2xl transition-colors duration-300">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white md:text-center transition-colors w-full">
           Mewujudkan ide-ide Anda. <br />
           Mari wujudkan menjadi nyata.
         </h2>
@@ -56,7 +56,7 @@ export const Contact = () => {
           Punya proyek yang ingin dikerjakan? Mari diskusikan.
         </p>
 
-        <div className="bg-white dark:bg-slate-800 border border-white/50 dark:border-slate-700 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-slate-900/50 p-6 rounded-lg w-full mt-4 md:mt-0 transition-all duration-300">
+        <div className="bg-white dark:bg-slate-800 border border-white/50 dark:border-slate-700 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-slate-900/50 p-6 rounded-lg w-full mt-4 md:mt-0 transition-all duration-300 md:px-6 lg:px-6 xl:px-6">
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div>
               <label

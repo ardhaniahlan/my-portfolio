@@ -14,7 +14,7 @@ const socialMedia: SocialMediaItem[] = [
 
 export const Footer = () => {
   return (
-    <footer className="py-8 md:px-48 p-6 flex flex-col md:gap-6 gap-6 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 dark:bg-slate-900">
+    <footer className="py-8 md:px-24 lg:px-48 xl:px-48 p-6 flex flex-col md:gap-6 gap-6 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 dark:bg-slate-900">
       <div className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
         <h1 className="text-[20px] font-bold text-gray-900 dark:text-white transition-colors">
           Ardhani Ahlan <br />
@@ -45,7 +45,7 @@ export const Footer = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-slate-400 dark:hover:text-white transition-colors duration-300"
+              className="text-gray-600 hover:text-gray-900 dark:text-slate-400 dark:hover:text-white transition-colors duration-300 hover:scale-105 ease-in"
             >
               <Icon name={social.icon} size={24} className="text-[28px]" />
             </a>

@@ -17,7 +17,7 @@ const socialMedia: SocialMediaItem[] = [
 
 export const Profile = () => {
   return (
-    <div className="w-full bg-white/40 dark:bg-slate-900 backdrop-blur-lg border border-white/50 dark:border-slate-800/50  p-8 flex flex-col pb-24 pt-16 md:px-100 md:py-32 transition-colors duration-300">
+    <div className="w-full bg-white/40 dark:bg-slate-900 backdrop-blur-lg border border-white/50 dark:border-slate-800/50  p-6 flex flex-col pb-24 pt-16 md:px-24 lg:px-48 xl:px-100 md:py-20 lg:py-32 transition-colors duration-300 ">
       <div className="flex flex-col md:flex-row md:gap-8 md:items-center md:mb-6">
         <div className="w-35 h-35 rounded-full bg-pink-100 dark:bg-slate-800 overflow-hidden border-4 border-white dark:border-slate-700 shadow-lg transition-colors duration-300">
           <img
@@ -71,7 +71,7 @@ export const Profile = () => {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 dark:text-slate-400 dark:hover:text-white transition-colors duration-300"
+              className="text-gray-600 hover:text-gray-900 dark:text-slate-400 dark:hover:text-white transition-colors duration-300 hover:scale-105 ease-in"
             >
               <Icon name={social.icon} size={24} className="text-[28px]" />
             </a>

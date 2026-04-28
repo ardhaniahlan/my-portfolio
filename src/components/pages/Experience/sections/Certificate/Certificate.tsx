@@ -7,7 +7,7 @@ export const Certificate = () => {
   const [activeCertId, setActiveCertId] = useState<number | null>(null);
 
   return (
-    <div className="w-full md:px-48 pb-24 pt-8 p-6">
+    <div className="w-full md:px-24 lg:px-48 xl:px-48 pb-24 pt-8 p-6">
       <div className="flex flex-col gap-2 md:w-2/3">
         <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
           Kursus Sertifikat {""}
