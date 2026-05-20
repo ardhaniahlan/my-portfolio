@@ -20,7 +20,7 @@ export const professionalData: ProfessionalType[] = [
     status: "Magang",
     duration: "Des 2025 - Sekarang",
     description:
-      "Bertanggung jawab atas pengembangan multi-platform. Pada ekosistem mobile, saya mengembangkan aplikasi admin Android (Jetpack Compose, MVVM) yang dilengkapi autentikasi dan verifikasi e-KTP. Pada ekosistem web, saya membangun Payronment, platform Web3 berbasis React Vite yang memfasilitasi transaksi token blockchain (WaNaMa & Filantropi) melalui integrasi WalletConnect. Selain itu, saya juga mengembangkan sistem komunikasi Webmail internal layaknya Gmail menggunakan Next.js yang saat ini sedang dalam tahap pra-deployment.",
+      "Bertanggung jawab atas pengembangan multi-platform secara end-to-end. Pada ekosistem mobile, saya mengembangkan aplikasi admin Android (Jetpack Compose, MVVM) yang dilengkapi autentikasi dan verifikasi e-KTP. Pada ekosistem web, saya membangun Payronment, platform Web3 berbasis React Vite yang memfasilitasi transaksi token blockchain (WaNaMa & Filantropi) melalui integrasi WalletConnect. Untuk mendukung operasional produk tersebut, saya juga membangun dashboard admin web untuk memantau statistik transaksi berdasarkan rentang waktu, serta melakukan deployment aplikasi secara mandiri menggunakan VPS. Selain itu, saya mengembangkan sistem komunikasi Webmail internal berbasis Next.js yang saat ini sedang dalam tahap pra-deployment.",
     certificate: [],
     techStack: ["React", "Tailwind", "Next.js", "WalletConnect", "Android Jetpack Compose", "MVVM", "Figma"],
   },
