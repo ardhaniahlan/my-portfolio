@@ -4,7 +4,7 @@ export const aboutData = {
   name: "Ardhani Ahlan",
   role: "Software Developer",
   location: "Bekasi, Indonesia",
-  bio: "Pengembang Android dengan wawasan full-stack yang berfokus pada aplikasi yang bersih dan mudah digunakan. Pernah berkontribusi di Bangkit Academy 2023 dan mengembangkan aplikasi admin end-to-end saat magang. Saya percaya arsitektur yang baik adalah fondasi dari produk yang hebat.",
+  bio: "Software Developer dengan wawasan Fullstack yang berfokus pada ekosistem Android dan Web (termasuk Web3). Alumni Bangkit Academy 2023. Berpengalaman membangun aplikasi end-to-end menggunakan teknologi modern seperti Jetpack Compose, React, dan Next.js. Saya percaya kode yang bersih dan arsitektur yang solid adalah kunci untuk menciptakan pengalaman pengguna yang optimal.",
   photo: profile,
   tags: [
     { label: "Android", color: "bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400" },
