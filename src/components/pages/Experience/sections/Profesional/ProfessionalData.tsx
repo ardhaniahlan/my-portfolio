@@ -20,9 +20,9 @@ export const professionalData: ProfessionalType[] = [
     status: "Magang",
     duration: "Des 2025 - Sekarang",
     description:
-      "Mengembangkan aplikasi admin berbasis Android secara end-to-end. Fokus utama pengembangan meliputi perancangan sistem autentikasi, manajemen daftar pengguna, serta implementasi fitur verifikasi KTP elektronik untuk memastikan validitas data. Selama proses magang ini, saya juga mendalami manajemen state pada Jetpack Compose dan menerapkan pola arsitektur MVVM agar kode lebih bersih, mudah di-maintenance, dan siap untuk pengembangan skala yang lebih besar.",
+      "Bertanggung jawab atas pengembangan multi-platform. Pada ekosistem mobile, saya mengembangkan aplikasi admin Android (Jetpack Compose, MVVM) yang dilengkapi autentikasi dan verifikasi e-KTP. Pada ekosistem web, saya membangun Payronment, platform Web3 berbasis React Vite yang memfasilitasi transaksi token blockchain (WaNaMa & Filantropi) melalui integrasi WalletConnect. Selain itu, saya juga mengembangkan sistem komunikasi Webmail internal layaknya Gmail menggunakan Next.js yang saat ini sedang dalam tahap pra-deployment.",
     certificate: [],
-    techStack: ["Android Jetpack Compose", "MVVM", "Figma", "Retrofit"],
+    techStack: ["React", "Tailwind", "Next.js", "WalletConnect", "Android Jetpack Compose", "MVVM", "Figma"],
   },
   {
     id: 2,

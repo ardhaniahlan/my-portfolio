@@ -38,19 +38,19 @@ export const aboutData = {
     {
       category: "Backend",
       color: "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400",
-      items: ["Spring Boot", "Java", "PostgreSQL", "Firebase"],
+      items: ["Spring Boot", "Java", "PostgreSQL", "Firebase", "Laravel", "MySQL"],
     },
     {
       category: "Frontend",
       color:
         "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400",
-      items: ["React", "TypeScript", "Tailwind CSS"],
+      items: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
     },
     {
       category: "Tools",
       color:
         "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300",
-      items: ["Figma", "Git", "Retrofit"],
+      items: ["Figma", "Git", "Android Studio", "Antigravity"],
     },
   ],
 };

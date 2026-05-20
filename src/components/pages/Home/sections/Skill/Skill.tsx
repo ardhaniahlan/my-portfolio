@@ -27,8 +27,8 @@ const skillList: CardSkillProps[] = [
     description:
       "Berikut adalah alat yang saya gunakan untuk mengembangkan aplikasi:",
     list: [
-      "• Front End (Kotlin , React, TailwindCSS)",
-      "• Back End (Laravel, PostgreSQL, MySQL)",
+      "• Front End (Kotlin, React, TailwindCSS, Next.js)",
+      "• Back End (SpringBoot, Laravel, PostgreSQL, MySQL)",
       "• Design (Figma, Canva, Photoshop, Ilustrator)",
     ],
   },
@@ -68,7 +68,7 @@ export const Skill = () => {
               <div className="text-slate-800 dark:text-slate-200">
                 <Icon name={skill.icon} size={32} />
               </div>
-              
+
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">
                 {skill.title}
               </h2>
