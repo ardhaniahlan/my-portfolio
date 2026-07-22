@@ -1,5 +1,4 @@
-import sertifJava from "../../../../../assets/sertifjava.jpg";
-import sertifBangkit from "../../../../../assets/sertifbangkit.jpg";
+import sertifMaganghub from "../../../../../assets/sertifmaganghub.png";
 
 export interface ProfessionalType {
   id: number;
@@ -18,39 +17,10 @@ export const professionalData: ProfessionalType[] = [
     role: "Front End Developer Intern",
     company: "Kemas Foundation",
     status: "Magang",
-    duration: "Des 2025 - Sekarang",
+    duration: "Des 2025 - Jun 2026",
     description:
-      "Bertanggung jawab atas pengembangan multi-platform secara end-to-end. Pada ekosistem mobile, saya mengembangkan aplikasi admin Android (Jetpack Compose, MVVM) yang dilengkapi autentikasi dan verifikasi e-KTP. Pada ekosistem web, saya membangun Payronment, platform Web3 berbasis React Vite yang memfasilitasi transaksi token blockchain (WaNaMa & Filantropi) melalui integrasi WalletConnect. Untuk mendukung operasional produk tersebut, saya juga membangun dashboard admin web untuk memantau statistik transaksi berdasarkan rentang waktu, serta melakukan deployment aplikasi secara mandiri menggunakan VPS. Selain itu, saya mengembangkan sistem komunikasi Webmail internal berbasis Next.js yang saat ini sedang dalam tahap pra-deployment.",
-    certificate: [],
-    techStack: ["React", "Tailwind", "Next.js", "WalletConnect", "Android Jetpack Compose", "MVVM", "Figma"],
-  },
-  {
-    id: 2,
-    role: "Backend Java",
-    company: "SYNRGY Academy",
-    status: "Bootcamp",
-    duration: "Aug 2023 - March 2024",
-    description:
-      "Mengikuti bootcamp intensif dengan fokus pada pengembangan backend menggunakan Java Spring Boot. Selama program, saya mempelajari REST API, Spring Data JPA, Hibernate, dan JWT Authentication, serta menerapkan unit testing dengan JUnit & MockMvc. Pengalaman ini juga membekali saya dengan praktik kolaborasi menggunakan Git/GitHub dan code review.",
-    certificate: [sertifJava],
-    techStack: ["SpringBoot", "JPA"],
-  },
-  {
-    id: 3,
-    role: "Mobile Application Developer",
-    company: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
-    status: "MSIB",
-    duration: "Feb 2023 - Jul 2023",
-    description:
-      "Saya terpilih sebagai peserta Bangkit Academy 2023 dengan learning path Mobile Development. Program ini membawa saya dari pemula hingga tingkat lanjut dalam pengembangan aplikasi Android menggunakan Kotlin, Android Jetpack, API integration, dan Firebase. Pada tahap akhir, saya berkolaborasi lintas disiplin (Mobile, Machine Learning, Cloud Computing) dalam mengembangkan aplikasi iFiCam, yang berhasil masuk Top 65 Capstone Project terbaik Bangkit Academy 2023. Pengalaman ini melatih saya dalam teamwork, problem solving, serta membangun aplikasi end-to-end dengan teknologi terkini.",
-    certificate: [sertifBangkit],
-    techStack: [
-      "Android Development",
-      "UI/UX",
-      "MVVM",
-      "Fundamental",
-      "Firebase",
-      "Retrofit",
-    ],
+      "• Membangun produk Remittance menggunakan React.js (Vite), Tailwind CSS, dan JavaScript (ES6+) dengan integrasi WalletConnect untuk pertukaran token blockchain, serta dashboard admin untuk monitoring user, transaksi, dan volume token yang diselesaikan dalam 1 bulan, berkolaborasi dengan backend developer via RESTful API. \n• Mengembangkan sistem Webmail internal perusahaan secara end-to-end menggunakan Next.js, JavaScript, dan Tailwind CSS sebagai sole frontend developer, berkolaborasi dengan backend developer via RESTful API yang diselesaikan dalam 1 bulan. \n• Melakukan deployment mandiri 2 aplikasi (Remittance & Webmail) menggunakan Virtual Private Server (VPS). \n• Mengembangkan prototype aplikasi admin Android secara end-to-end menggunakan Jetpack Compose dan arsitektur MVVM, mencakup 3 fitur utama: sistem autentikasi, manajemen pengguna, dan verifikasi e-KTP.",
+    certificate: [sertifMaganghub],
+    techStack: ["React", "Tailwind", "Next.js", "WalletConnect", "Android Jetpack Compose", "MVVM", "Figma", "Deployment", "VPS", "Git/GitHub"],
   },
 ];

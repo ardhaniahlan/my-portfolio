@@ -22,7 +22,7 @@ export const Home = () => {
     <div>
       <Profile />
       <Skill />
-      <section id="contact" className="scroll-mt-[-20px]">
+      <section id="contact" className="-scroll-mt-5">
         <Contact />
       </section>
     </div>

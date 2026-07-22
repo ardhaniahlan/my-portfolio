@@ -1,18 +1,18 @@
 import { useState } from "react";
 import Icon from "../../../../ui/Icon";
-import { professionalData } from "./ProfessionalData";
 import { CertificateModal } from "../../CertificateModal";
+import { trainingData } from "./TrainingData";
 
-export const Professional = () => {
+export const Training = () => {
   const [activeCertId, setActiveCertId] = useState<number | null>(null);
 
   return (
     <div className="w-full md:px-24 lg:px-48 xl:px-48 pb-24 pt-8 p-6">
       <div className="flex flex-col gap-2 md:w-2/3">
         <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
-          Pengalaman{" "}
+          Pelatihan{" "}
           <span className="text-emerald-600 dark:text-emerald-400">
-            Profesional
+            Kemampuan
           </span>
         </h1>
         <p className="text-slate-600 dark:text-slate-300 transition-colors">
@@ -21,7 +21,7 @@ export const Professional = () => {
       </div>
 
       <div className="mt-10 grid md:grid-cols-2 gap-6 items-start">
-        {professionalData.map((experience) => {
+        {trainingData.map((experience) => {
           const hasCertificates =
             experience.certificate && experience.certificate.length > 0;
 
@@ -33,7 +33,7 @@ export const Professional = () => {
               <div className="border-l-4 border-emerald-500 p-6 pb-4 flex justify-between gap-4">
                 <div>
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-                    {experience.company}
+                    {experience.institution}
                   </h2>
                   <p className="text-emerald-600 dark:text-emerald-400 font-medium text-sm mt-0.5">
                     {experience.role}
@@ -59,7 +59,7 @@ export const Professional = () => {
               {activeCertId === experience.id && (
                 <CertificateModal
                   certificates={
-                    professionalData.find((e) => e.id === activeCertId)
+                    trainingData.find((e) => e.id === activeCertId)
                       ?.certificate ?? []
                   }
                   onClose={() => setActiveCertId(null)}

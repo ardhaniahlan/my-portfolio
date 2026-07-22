@@ -16,7 +16,7 @@ export const About = () => {
 
       <div className="flex flex-col gap-6">
         <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-md dark:shadow-slate-900/50 overflow-hidden transition-all duration-300">
-          <div className="flex flex-col sm:flex-row min-h-[220px]">
+          <div className="flex flex-col sm:flex-row min-h-55">
             <div className="w-full sm:w-48 shrink-0 bg-slate-100 dark:bg-slate-700 flex items-center justify-center">
               <img
                 src={aboutData.photo}
@@ -112,7 +112,7 @@ export const About = () => {
 
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-md dark:shadow-slate-900/50 p-6 transition-all duration-300">
             <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
-              Tentang saya
+              Fun Facts
             </h3>
             <ul className="flex flex-col gap-3">
               {aboutData.funFacts.map((fact, i) => (

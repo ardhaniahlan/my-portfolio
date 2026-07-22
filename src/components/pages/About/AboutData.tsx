@@ -2,19 +2,19 @@ import profile from "../../../assets/paspoto.png";
 
 export const aboutData = {
   name: "Ardhani Ahlan",
-  role: "Software Developer",
+  role: "Programmer",
   location: "Bekasi, Indonesia",
-  bio: "Software Developer dengan wawasan Fullstack yang berfokus pada ekosistem Android dan Web (termasuk Web3). Alumni Bangkit Academy 2023. Berpengalaman membangun aplikasi end-to-end menggunakan teknologi modern seperti Jetpack Compose, React, dan Next.js. Saya percaya kode yang bersih dan arsitektur yang solid adalah kunci untuk menciptakan pengalaman pengguna yang optimal.",
+  bio: "Programmer dengan pengalaman membangun aplikasi end-to-end di berbagai platform — web menggunakan React.js dan Next.js, serta Android menggunakan Kotlin dan Jetpack Compose. Alumni Bangkit Academy 2023 (Google, GoTo, Traveloka). Terbiasa mengintegrasikan RESTful API, membangun antarmuka yang responsif, dan berkolaborasi dalam tim lintas disiplin. Percaya bahwa kode yang bersih dan arsitektur yang solid adalah kunci untuk menciptakan pengalaman pengguna yang optimal.",
   photo: profile,
   tags: [
-    { label: "Android", color: "bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400" },
-    { label: "Web", color: "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400" },
-    { label: "UI/UX", color: "bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400" },
+    { label: "Mobile Development (Android)", color: "bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400" },
+    { label: "Web Development", color: "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400" },
+    { label: "Backend Development (Laravel, Java, Go)", color: "bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400" },
   ],
   funFacts: [
-    "Menjalankan kehidupan yang sehat dengan Workout dan Jogging",
+    "Percaya hidup sehat = kode yang sehat juga — rutin workout dan jogging di sela coding",
     "Suka eksplorasi teknologi baru di waktu luang",
-    "Percaya bahwa UX yang baik = kode yang bersih",
+    "Punya prinsip: UX yang baik lahir dari kode yang bersih, bukan sebaliknya",
   ],
   education: [
     {

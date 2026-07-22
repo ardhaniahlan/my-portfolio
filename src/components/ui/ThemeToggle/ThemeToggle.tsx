@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import Icon from "../Icon";
 
 export const ThemeToggle = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(
+    typeof window !== "undefined"
+      ? localStorage.getItem("theme") || "light"
+      : "light",
+  );
 
   useEffect(() => {
     if (theme === "dark") {
@@ -11,6 +15,8 @@ export const ThemeToggle = () => {
       document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
+
+    window.dispatchEvent(new CustomEvent("themeChanged", { detail: theme }));
   }, [theme]);
 
   const toggleTheme = () => {
@@ -26,7 +32,11 @@ export const ThemeToggle = () => {
         {theme === "light" ? (
           <Icon name="darkmode" size={20} className="text-slate-800" />
         ) : (
-          <Icon name="lightmode" size={20} className="text-yellow-400 dark:text-white" />
+          <Icon
+            name="lightmode"
+            size={20}
+            className="text-yellow-400 dark:text-white"
+          />
         )}
       </button>
     </div>
