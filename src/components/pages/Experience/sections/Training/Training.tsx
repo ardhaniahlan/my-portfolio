@@ -16,7 +16,7 @@ export const Training = () => {
           </span>
         </h1>
         <p className="text-slate-600 dark:text-slate-300 transition-colors">
-          Berikut adalah ringkasan pengalaman profesional saya.
+          Berikut adalah ringkasan pengalaman pelatihan saya.
         </p>
       </div>
 
