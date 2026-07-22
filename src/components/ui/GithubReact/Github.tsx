@@ -13,14 +13,14 @@ export const Github = () => {
       setCurrentTheme("dark");
     }
 
-    const handleThemeChange = (event: CustomEvent) => {
-      setCurrentTheme(event.detail);
+    const handleThemeChange = (event: Event) => {
+      setCurrentTheme((event as CustomEvent).detail);
     };
 
-    window.addEventListener("themeChanged", handleThemeChange);
+    window.addEventListener("themeChanged", handleThemeChange as EventListener);
 
     return () => {
-      window.removeEventListener("themeChanged", handleThemeChange);
+      window.removeEventListener("themeChanged", handleThemeChange as EventListener);
     };
   }, []);
 
