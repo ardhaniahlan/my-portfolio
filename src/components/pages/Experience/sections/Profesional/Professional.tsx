@@ -20,7 +20,11 @@ export const Professional = () => {
         </p>
       </div>
 
-      <div className="mt-10 grid md:grid-cols-2 gap-6 items-start">
+      <div
+        className={`mt-10 grid gap-6 items-start ${
+          professionalData.length > 1 ? "md:grid-cols-2" : "grid-cols-1"
+        }`}
+      >
         {professionalData.map((experience) => {
           const hasCertificates =
             experience.certificate && experience.certificate.length > 0;
