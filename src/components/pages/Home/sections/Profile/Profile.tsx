@@ -16,16 +16,35 @@ const socialMedia: SocialMediaItem[] = [
   { id: 3, icon: "instagram", link: "https://instagram.com/ardhani.ahlan" },
 ];
 
+interface DataProfile {
+  name: string;
+  role: string;
+  description: string; 
+}
+
+const profileData: DataProfile = {
+  name: "Ardhan",
+  role: "A Programmer",
+  description: "Pengembang Frontend dengan wawasan Android & full-stack, antusias membangun aplikasi responsif. Saya berfokus pada titik temu antara integrasi sistem yang kuat dan pengalaman pengguna yang mulus.",
+}
+
 export const Profile = () => {
   return (
-    <div className="w-full bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl border-y border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 lg:py-24 flex flex-col gap-8">
+    <div className="relative w-full bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl border-y border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300 overflow-hidden">
+      
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-10%] left-[-5%] w-72 h-72 bg-emerald-400/30 dark:bg-emerald-500/20 rounded-full blur-3xl animate-blob" />
+        <div className="absolute top-[20%] right-[-10%] w-80 h-80 bg-teal-300/30 dark:bg-teal-500/20 rounded-full blur-3xl animate-blob animation-delay-1500" />
+        <div className="absolute bottom-[-15%] left-[30%] w-96 h-96 bg-emerald-300/20 dark:bg-emerald-600/15 rounded-full blur-3xl animate-blob animation-delay-3000" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 pt-32 pb-16 md:py-48 lg:py-48 flex flex-col gap-8">
         <div className="flex justify-center">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
               <div className="relative shrink-0">
                 <div className="absolute inset-0 bg-emerald-900 dark:bg-emerald-500 rounded-full blur-md opacity-20 dark:opacity-40"></div>
-                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl transition-transform hover:scale-105 duration-300">
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl transition-transform hover:scale-105 duration-300">
                   <img
                     src={profilePoto}
                     alt="Ardhani Ahlan"
@@ -36,19 +55,17 @@ export const Profile = () => {
 
               <div className="flex flex-col">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 dark:text-white tracking-tight leading-tight transition-colors duration-300">
-                  Hey, I'm Ardhan ✨
+                  Hey, I'm {profileData.name} ✨
                   <br />
                   <span className="text-emerald-600 dark:text-emerald-400">
-                    A Programmer
+                    {profileData.role}
                   </span>
                 </h1>
               </div>
             </div>
 
             <p className="max-w-3xl text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">
-              Pengembang Android dengan wawasan full-stack yang antusias
-              membangun aplikasi responsif. Saya berfokus pada titik temu antara
-              integrasi sistem yang kuat dan pengalaman pengguna yang mulus.
+              {profileData.description}
             </p>
 
             <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mt-2">

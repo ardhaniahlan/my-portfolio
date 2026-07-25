@@ -1,21 +1,11 @@
 import sertifMaganghub from "../../../../../assets/sertifmaganghub.png";
+import type { TimelineItemType } from "../../../../types/type";
 
-export interface ProfessionalType {
-  id: number;
-  role: string;
-  company: string;
-  status: string;
-  duration: string;
-  description: string;
-  certificate?: string[];
-  techStack: string[];
-}
-
-export const professionalData: ProfessionalType[] = [
+export const professionalData: TimelineItemType[] = [
   {
     id: 1,
     role: "Front End Developer Intern",
-    company: "Kemas Foundation",
+    organization: "Kemas Foundation",
     status: "Magang",
     duration: "Des 2025 - Jun 2026",
     description:

@@ -1,12 +1,10 @@
-import Profesional from "./sections/Profesional";
-import {Training} from "./sections/Training";
 import Certificate from "./sections/Certificate";
+import { TimelineExp } from "./sections/TimelineExp";
 
 export const Experience = () => {
   return (
     <>
-      <Profesional />
-      <Training />
+      <TimelineExp />
       <Certificate />
     </>
   );

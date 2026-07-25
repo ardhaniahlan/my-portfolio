@@ -1,12 +1,15 @@
 import { useState } from "react";
-import Icon from "../../ui/Icon";
+import Icon from "../Icon";
 
 type CertificateModalProps = {
   certificates: string[];
   onClose: () => void;
 };
 
-export const CertificateModal = ({ certificates, onClose }: CertificateModalProps) => {
+export const CertificateModal = ({
+  certificates,
+  onClose,
+}: CertificateModalProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isMultiple = certificates.length > 1;
 

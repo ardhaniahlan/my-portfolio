@@ -24,7 +24,6 @@ export interface CertificateItem {
   title: string;
   issuer: string;
   certificate?: string[];
-  githubUrl?: string;
 }
 
 export const certificateItem: CertificateItem[] = [

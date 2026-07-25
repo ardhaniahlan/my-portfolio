@@ -1,7 +1,7 @@
 import Icon from "../../../../ui/Icon";
 import { useState } from "react";
 import { certificateItem } from "./CertificateData";
-import { CertificateModal } from "../../CertificateModal";
+import { CertificateModal } from "../../../../ui/CertificateModal/CertificateModal";
 
 export const Certificate = () => {
   const [activeCertId, setActiveCertId] = useState<number | null>(null);

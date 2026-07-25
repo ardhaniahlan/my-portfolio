@@ -1,22 +1,12 @@
 import sertifJava from "../../../../../assets/sertifjava.jpg";
 import sertifBangkit from "../../../../../assets/sertifbangkit.jpg";
+import type { TimelineItemType } from "../../../../types/type";
 
-export interface TrainingType {
-  id: number;
-  role: string;
-  institution: string;
-  status: string;
-  duration: string;
-  description: string;
-  certificate?: string[];
-  techStack: string[];
-}
-
-export const trainingData: TrainingType[] = [
+export const trainingData: TimelineItemType[] = [
   {
     id: 1,
     role: "Backend Java",
-    institution: "SYNRGY Academy",
+    organization: "SYNRGY Academy",
     status: "Bootcamp",
     duration: "Aug 2023 - March 2024",
     description:
@@ -27,7 +17,7 @@ export const trainingData: TrainingType[] = [
   {
     id: 2,
     role: "Mobile Application Developer",
-    institution: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
+    organization: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
     status: "MSIB",
     duration: "Feb 2023 - Jul 2023",
     description:
