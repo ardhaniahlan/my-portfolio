@@ -4,7 +4,7 @@ export interface TimelineItemType {
   organization: string;
   status: string;
   duration: string;
-  description: string;
+  description: string | string[];
   certificate?: string[];
   techStack: string[];
 }

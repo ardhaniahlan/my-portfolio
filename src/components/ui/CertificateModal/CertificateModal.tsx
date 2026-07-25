@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Icon from "../Icon";
+import { createPortal } from "react-dom";
 
 type CertificateModalProps = {
   certificates: string[];
@@ -26,9 +27,9 @@ export const CertificateModal = ({
     if (e.target === e.currentTarget) onClose();
   };
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-60 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
       onClick={handleBackdropClick}
     >
       <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden">
@@ -114,6 +115,7 @@ export const CertificateModal = ({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

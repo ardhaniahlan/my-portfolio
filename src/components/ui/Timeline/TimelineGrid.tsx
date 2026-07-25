@@ -94,9 +94,23 @@ export const TimelineSection = ({
                   )}
 
                   <div className="px-6 pb-6 space-y-4">
-                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line">
-                      {item.description}
-                    </p>
+                    {Array.isArray(item.description) ? (
+                      <ul className="space-y-2.5">
+                        {item.description.map((point, i) => (
+                          <li
+                            key={i}
+                            className="flex gap-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed"
+                          >
+                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500/70 shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line">
+                        {item.description}
+                      </p>
+                    )}
 
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {item.techStack.map((tech) => (
