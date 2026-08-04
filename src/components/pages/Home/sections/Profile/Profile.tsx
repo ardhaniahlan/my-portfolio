@@ -3,6 +3,7 @@ import profilePoto from "../../../../../assets/profile.jpeg";
 import type { IconName } from "../../../../ui/Icon/Icon";
 import { Link } from "react-router-dom";
 import { Github } from "../../../../ui/GithubReact/Github";
+import { BlobBackground } from "../../../../ui/BlopBackground";
 
 interface SocialMediaItem {
   id: number;
@@ -32,11 +33,7 @@ export const Profile = () => {
   return (
     <div className="relative w-full bg-white/60 dark:bg-slate-900/80 backdrop-blur-xl border-y border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300 overflow-hidden">
       
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-5%] w-72 h-72 bg-emerald-400/30 dark:bg-emerald-500/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute top-[20%] right-[-10%] w-80 h-80 bg-teal-300/30 dark:bg-teal-500/20 rounded-full blur-3xl animate-blob animation-delay-1500" />
-        <div className="absolute bottom-[-15%] left-[30%] w-96 h-96 bg-emerald-300/20 dark:bg-emerald-600/15 rounded-full blur-3xl animate-blob animation-delay-3000" />
-      </div>
+      <BlobBackground />
 
       <div className="max-w-6xl mx-auto px-6 pt-32 pb-16 md:py-48 lg:py-48 flex flex-col gap-8">
         <div className="flex justify-center">

@@ -1,5 +1,6 @@
 import type React from "react";
 import Swal from "sweetalert2";
+import { BlobBackground } from "../../../../ui/BlopBackground";
 
 export const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -48,10 +49,7 @@ export const Contact = () => {
   return (
     <div className="flex justify-center items-center py-24 p-6 md:px-24 lg:px-48 xl:px-48 transition-colors duration-300 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="relative isolate flex justify-center flex-col items-center w-full gap-2 lg:px-48 md:px-24 xl:px-64 px-6 py-8 bg-slate-200/90 dark:bg-slate-800/50 rounded-2xl transition-colors duration-300">
-        <div className="absolute inset-0">
-          <div className="absolute top-[-10%] left-[10%] w-72 h-72 bg-emerald-400/25 dark:bg-emerald-500/15 rounded-full blur-3xl animate-blob" />
-          <div className="absolute bottom-[-15%] right-[5%] w-80 h-80 bg-teal-300/25 dark:bg-teal-500/15 rounded-full blur-3xl animate-blob animation-delay-2000" />
-        </div>
+        <BlobBackground/>
         <h2 className="text-2xl md:text-4xl font-bold text-gray-900 dark:text-white md:text-center transition-colors w-full">
           Mewujudkan ide-ide Anda. <br />
           Mari wujudkan menjadi nyata.

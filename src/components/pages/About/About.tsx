@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import { aboutData } from "./AboutData";
+import { BlobBackground } from "../../ui/BlopBackground";
 
 export const About = () => {
   return (
     <div className="relative w-full md:px-24 lg:px-48 xl:px-48 pt-32 pb-16 p-6 lg:pt-32 xl:pt-32 overflow-hidden">
       
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[5%] left-[-5%] w-72 h-72 bg-emerald-400/30 dark:bg-emerald-500/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute top-[20%] right-[-10%] w-80 h-80 bg-teal-300/30 dark:bg-teal-500/20 rounded-full blur-3xl animate-blob animation-delay-1500" />
-        <div className="absolute bottom-[-15%] left-[30%] w-96 h-96 bg-emerald-300/20 dark:bg-emerald-600/15 rounded-full blur-3xl animate-blob animation-delay-3000" />
-      </div>
+      <BlobBackground/>
 
       <div className="flex flex-col gap-2 md:w-2/3 mb-12 fade-up relative z-10">
         <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">

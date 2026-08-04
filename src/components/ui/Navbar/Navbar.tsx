@@ -8,7 +8,9 @@ import { Link, useLocation } from "react-router-dom";
 export const Navbar = () => {
   const { pathname } = useLocation();
   const activeId =
-    navItems.find((item) => item.link === pathname)?.id ?? navItems[0]?.id;
+    navItems.find((item) =>
+      item.link === "/" ? pathname === "/" : pathname.startsWith(item.link),
+    )?.id ?? navItems[0]?.id;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
