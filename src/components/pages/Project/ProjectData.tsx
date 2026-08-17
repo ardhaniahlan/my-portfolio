@@ -10,6 +10,14 @@ import b5 from "../../../assets/bookingapp/b5.png";
 import b6 from "../../../assets/bookingapp/b6.png";
 import b7 from "../../../assets/bookingapp/b7.png";
 
+import h1 from "../../../assets/helpdesk/h1.png"
+import h2 from "../../../assets/helpdesk/h2.png"
+import h3 from "../../../assets/helpdesk/h3.png"
+import h4 from "../../../assets/helpdesk/h4.png"
+import h5 from "../../../assets/helpdesk/h5.png"
+import h6 from "../../../assets/helpdesk/h6.png"
+import h7 from "../../../assets/helpdesk/h7.png"
+
 import type { ReactNode } from "react";
 
 export interface Project {
@@ -60,11 +68,11 @@ export const projectsData: Project[] = [
   },
     {
     id: "booking-app",
-    title: "Booking App Fullstack",
+    title: "Booking App Full-Stack",
     description: "Platform marketplace untuk sewa alat dan venue",
     fullDescription: (
       <>
-        Sebuah aplikasi <em>full-stack</em> yang mempertemukan penyewa dengan pemilik aset (Vendor). Dibangun menggunakan arsitektur <strong>Next.js App Router</strong> dan <strong>Supabase</strong> sebagai <em>Backend-as-a-Service</em>. 
+        Sebuah aplikasi <em>full-stack</em> yang mempertemukan penyewa dengan pemilik aset (Vendor). Dibangun menggunakan arsitektur <strong>Next.js</strong> dan <strong>Supabase</strong> sebagai <em>Backend-as-a-Service</em>. 
         Fitur utamanya meliputi: Autentikasi multi-peran (User & Admin/Vendor) menggunakan Edge Middleware, 
         manajemen katalog dan ketersediaan barang, keranjang pemesanan dinamis, serta penerbitan E-Ticket. 
         Vendor memiliki akses ke dasbor analitik khusus untuk menyetujui atau menolak pesanan. Aplikasi ini 
@@ -81,8 +89,38 @@ export const projectsData: Project[] = [
       "Supabase (Auth & Database)",
       "Lucide React",
       "React Hook Form",
+      "Sonner",
       "Zod",
     ],
   },
-  
+  {
+    id: "it-helpdesk-system",
+    title: "IT Helpdesk & Ticketing System Full-Stack",
+    description: "Sistem pelaporan kendala IT dan manajemen bantuan perusahaan berbasis peran.",
+    fullDescription: (
+      <>
+        Sebuah aplikasi <em>full-stack</em> IT Helpdesk yang dirancang untuk mengelola dan melacak laporan kendala 
+        infrastruktur perusahaan secara efisien. Dibangun menggunakan arsitektur <strong>Next.js</strong> 
+        dan <strong>PostgreSQL (Drizzle ORM)</strong>. 
+        Fitur utamanya meliputi: Autentikasi berbasis peran (Admin & User) dengan pengaman <em>Edge Middleware</em>, 
+        manajemen tiket lengkap dengan kategori (Hardware/Software) dan status (Pending, In Progress, Resolved), 
+        serta fitur <strong>Live Chat Real-time</strong> di dalam detail tiket. Dilengkapi juga dengan panel Admin komprehensif 
+        yang mencakup manajemen pengguna, filter pencarian dinamis dengan <em>Debounce</em>, paginasi data, dan laporan statistik performa.
+      </>
+    ),
+    url: "https://helpdesk-app-nextjs.vercel.app/",
+    thumbnail: h1, 
+    gallery: [h1, h2, h3, h4, h5, h6, h7],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Neon DB",
+      "Lucide React",
+      "Sonner",
+      "Zod",
+    ],
+  },
 ];
