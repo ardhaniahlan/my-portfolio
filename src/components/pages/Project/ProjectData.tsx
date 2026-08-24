@@ -18,6 +18,14 @@ import h5 from "../../../assets/helpdesk/h5.png"
 import h6 from "../../../assets/helpdesk/h6.png"
 import h7 from "../../../assets/helpdesk/h7.png"
 
+import p1 from "../../../assets/managementapp/p1.png"
+import p2 from "../../../assets/managementapp/p2.png"
+import p3 from "../../../assets/managementapp/p3.png"
+import p4 from "../../../assets/managementapp/p4.png"
+import p5 from "../../../assets/managementapp/p5.png"
+import p6 from "../../../assets/managementapp/p6.png"
+import p7 from "../../../assets/managementapp/p7.png"
+
 import type { ReactNode } from "react";
 
 export interface Project {
@@ -123,4 +131,39 @@ export const projectsData: Project[] = [
       "Zod",
     ],
   },
+  {
+    id: "enterprise-project-management",
+    title: "Enterprise Project & Task Management System",
+    description: "Sistem kolaborasi tim dan manajemen proyek berbasis Kanban dengan fitur Multi-Tenant dan Role-Based Access Control (RBAC).",
+    fullDescription: (
+      <>
+        Sebuah aplikasi <em>Software as a Service (SaaS)</em> skala enterprise yang dirancang untuk mengelola proyek 
+        dan produktivitas tim secara terpusat. Dibangun menggunakan arsitektur <strong>Next.js (App Router)</strong> 
+        dan <strong>PostgreSQL (Drizzle ORM)</strong>. 
+        <br /><br />
+        Fitur utamanya meliputi: Sistem <strong>Multi-Tenant (Workspace)</strong> di mana pengguna dapat membuat 
+        organisasi dan mengundang anggota tim (Invite System); <strong>Role-Based Access Control (RBAC)</strong> yang ketat 
+        memisahkan hak akses antara Owner, Project Manager, dan Member. 
+        <br /><br />
+        Dilengkapi dengan fitur inti berupa <strong>Interactive Kanban Board</strong> (Drag & Drop) untuk manajemen tugas 
+        yang mendalam (Prioritas, Tenggat Waktu, <em>Checklist/Sub-tasks</em>, dan Sistem Komentar). 
+        Memiliki fitur keamanan mutakhir seperti <em>Read-Only / Archive Mode</em> untuk proyek yang telah selesai, 
+        serta <strong>Activity Logger (CCTV)</strong> yang mencatat setiap aksi pengguna secara otomatis di <em>Dynamic Dashboard</em>.
+      </>
+    ),
+    url: "https://project-management-app-next-js.vercel.app", 
+    thumbnail: p1,
+    gallery: [p1, p2, p3, p4, p5, p6, p7],
+    techStack: [
+      "Next.js", 
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Neon DB",
+      "Jose (JWT)",
+      "Lucide React",
+      "Sonner",
+    ],
+  }
 ];
