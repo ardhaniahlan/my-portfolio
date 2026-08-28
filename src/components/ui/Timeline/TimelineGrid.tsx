@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Icon from "../Icon";
 import { CertificateModal } from "../CertificateModal/CertificateModal";
 import type { TimelineItemType } from "../../types/type";
 
@@ -9,6 +8,7 @@ interface TimelineSectionProps {
   titleHighlight: string;
   subtitle: string;
   containerClassName?: string;
+  hideHeader?: boolean;
 }
 
 export const TimelineSection = ({
@@ -17,118 +17,111 @@ export const TimelineSection = ({
   titleHighlight,
   subtitle,
   containerClassName = "pt-8",
+  hideHeader = false,
 }: TimelineSectionProps) => {
   const [activeCertId, setActiveCertId] = useState<number | null>(null);
 
   return (
-    <div
-      className={`w-full md:px-24 lg:px-48 xl:px-48 pb-16 p-6 ${containerClassName}`}
-    >
-      <div className="flex flex-col gap-2 md:w-2/3">
-        <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
-          {titlePrefix}{" "}
-          <span className="text-emerald-600 dark:text-emerald-400">
-            {titleHighlight}
-          </span>
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 transition-colors">
-          {subtitle}
-        </p>
-      </div>
+    <div className={`w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-24 ${containerClassName}`}>
+      
+      {!hideHeader && (
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-serif mb-4 leading-tight">
+            {titlePrefix} <span className="text-zinc-500 font-serif">{titleHighlight}</span>
+          </h2>
+          <p className="text-zinc-400 text-sm md:text-base max-w-xl leading-relaxed">
+            {subtitle}
+          </p>
+        </div>
+      )}
 
-      <div className="relative mt-14">
-        {items.length > 1 && (
-          <div className="absolute left-2 md:left-4 top-2 bottom-2 w-px bg-linear-to-b from-emerald-500/60 via-slate-300 dark:via-slate-700 to-transparent" />
+      <div className="relative mt-8">
+        {items.length > 0 && (
+          <div className="absolute left-27.5 md:left-40 top-4 bottom-4 w-px bg-zinc-800" />
         )}
 
-        <div className="flex flex-col gap-10">
-          {items.map((item, index) => {
-            const hasCertificates =
-              item.certificate && item.certificate.length > 0;
-            const isLast = index === items.length - 1;
+        <div className="flex flex-col gap-12">
+          {items.map((item) => {
+            const hasCertificates = item.certificate && item.certificate.length > 0;
 
             return (
-              <div key={item.id} className="relative pl-8 md:pl-10">
-                <div className="absolute left-0 top-2 flex items-center justify-center">
-                  <span className="relative flex h-4 w-4 md:h-5 md:w-5">
-                    {isLast && (
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-40 animate-ping" />
-                    )}
-                    <span className="relative inline-flex h-4 w-4 md:h-5 md:w-5 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-slate-900" />
+              <div key={item.id} className="relative flex flex-col md:flex-row items-start gap-8 md:gap-16">
+                
+                <div className="w-full md:w-30 lg:w-35 shrink-0 pt-1">
+                  <span className="text-xs font-mono uppercase tracking-widest text-zinc-400 block">
+                    {item.duration}
+                  </span>
+                  <span className="text-[11px] text-zinc-600 font-mono block mt-1">
+                    {item.status || "Indonesia, ID"}
                   </span>
                 </div>
 
-                <span className="inline-block text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-2">
-                  {item.duration}
-                </span>
+                <div className="absolute left-26.5 md:left-39 top-1.5 w-2 h-2 rounded-full bg-zinc-500 border-4 border-[#0f0f11]" />
 
-                <div className="group bg-white dark:bg-slate-800/80 rounded-2xl border border-slate-200 dark:border-slate-700/70 shadow-sm hover:shadow-lg dark:shadow-slate-900/40 transition-all duration-300 overflow-hidden">
-                  <div className="p-6 pb-5 flex justify-between gap-4">
+                <div className="flex-1 w-full bg-[#18181b] p-8 rounded-2xl border border-zinc-800/60 hover:border-zinc-700 transition-colors">
+                  
+                  <div className="flex justify-between items-start gap-4 mb-4">
                     <div>
-                      <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                      <h3 className="text-xl font-serif text-zinc-100 mb-1">
                         {item.organization}
-                      </h2>
-                      <p className="text-slate-500 dark:text-slate-400 font-medium text-sm mt-0.5">
+                      </h3>
+                      <p className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
                         {item.role}
                       </p>
-                      <span className="inline-block mt-2.5 text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700/60 text-slate-600 dark:text-slate-300">
-                        {item.status}
-                      </span>
                     </div>
 
                     {hasCertificates && (
                       <button
                         onClick={() => setActiveCertId(item.id)}
-                        className="h-fit shrink-0 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/50 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-500 transition-colors cursor-pointer"
+                        className="text-xs uppercase tracking-wider text-zinc-400 hover:text-white bg-zinc-800 px-3 py-1.5 rounded border border-zinc-700 transition-colors"
                       >
-                        <Icon name="certificate" size={22} />
+                        Lihat Sertifikat
                       </button>
                     )}
                   </div>
 
-                  {activeCertId === item.id && (
-                    <CertificateModal
-                      certificates={item.certificate ?? []}
-                      onClose={() => setActiveCertId(null)}
-                    />
-                  )}
-
-                  <div className="px-6 pb-6 space-y-4">
+                  <div className="space-y-3 mb-6">
                     {Array.isArray(item.description) ? (
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2">
                         {item.description.map((point, i) => (
-                          <li
-                            key={i}
-                            className="flex gap-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed"
-                          >
-                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500/70 shrink-0" />
+                          <li key={i} className="text-sm text-zinc-400 leading-relaxed flex gap-2">
+                            <span className="text-zinc-600">•</span>
                             <span>{point}</span>
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line">
+                      <p className="text-sm text-zinc-400 leading-relaxed whitespace-pre-line">
                         {item.description}
                       </p>
                     )}
-
-                    <div className="flex flex-wrap gap-1.5 pt-1">
-                      {item.techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-medium border border-emerald-100 dark:border-emerald-500/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
                   </div>
+
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-zinc-800/80">
+                    {item.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-[11px] px-2.5 py-1 rounded bg-zinc-900 text-zinc-400 border border-zinc-800 font-mono"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
                 </div>
+
               </div>
             );
           })}
         </div>
       </div>
+
+      {activeCertId && (
+        <CertificateModal
+          certificates={items.find((i) => i.id === activeCertId)?.certificate ?? []}
+          onClose={() => setActiveCertId(null)}
+        />
+      )}
     </div>
   );
 };

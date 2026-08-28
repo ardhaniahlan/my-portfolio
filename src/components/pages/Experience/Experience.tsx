@@ -5,7 +5,6 @@ export const Experience = () => {
   return (
     <>
       <TimelineExp />
-      <Certificate />
     </>
   );
 };

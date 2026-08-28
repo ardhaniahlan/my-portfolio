@@ -1,26 +1,31 @@
-import { BlobBackground } from "../../ui/BlopBackground";
 import { ProjectCard } from "../../ui/ProjectCard";
 import { projectsData } from "./ProjectData";
 
 export const Project = () => {
   return (
-    <div className="w-full md:px-12 lg:px-48 pb-16 p-6 pt-32 relative overflow-hidden">
-      <BlobBackground/>
-      <div className="flex flex-col gap-2 md:w-2/3">
-        <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
-          Projek {""}
-          <span className="text-emerald-600 dark:text-emerald-400">Saya</span>
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 transition-colors">
-          Berikut beberapa project pribadi yang pernah saya bangun.
-        </p>
-      </div>
+    <div className="w-full bg-[#0f0f11] text-zinc-100 min-h-screen px-6 md:px-12 lg:px-24 pt-32 pb-24 overflow-hidden">
+      
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8 mb-16">
+          <div className="flex flex-col gap-4 max-w-xl">
+            <h1 className="text-5xl md:text-6xl font-serif text-white tracking-wide">
+              Projek
+            </h1>
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+              Arsip proyek terpilih yang mengeksplorasi antarmuka digital, sistem desain, dan
+              pengalaman pengguna interaktif.
+            </p>
+          </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-        {projectsData.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projectsData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
       </div>
+      
     </div>
   );
 };

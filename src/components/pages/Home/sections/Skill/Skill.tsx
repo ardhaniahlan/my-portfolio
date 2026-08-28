@@ -1,91 +1,83 @@
-import Icon from "../../../../ui/Icon";
-import type { IconName } from "../../../../ui/Icon/Icon";
+interface SkillItem {
+  name: string;
+  level: string;
+}
 
 interface CardSkillProps {
-  icon: IconName;
-  title: string;
-  description: string;
-  list: string[];
+  category: string;
+  items: SkillItem[];
 }
 
 const skillList: CardSkillProps[] = [
   {
-    icon: "laptopcode",
-    title: "Yang bisa saya lakukan",
-    description:
-      "Saya dapat membantu mengembangkan solusi yang akan membantu Anda mengembangkan bisnis Anda:",
-    list: [
-      "• Android Development",
-      "• Web Development",
-      "• UI/UX Design",
-      "• API Integration",
+    category: "Frontend",
+    items: [
+      { name: "React & Next.js", level: "Advanced" },
+      { name: "TypeScript", level: "Advanced" },
+      { name: "Tailwind CSS", level: "Expert" },
+      { name: "UI/UX Design", level: "Familiar" },
     ],
   },
   {
-    icon: "stack",
-    title: "Alat yang saya gunakan",
-    description:
-      "Berikut adalah alat yang saya gunakan untuk mengembangkan aplikasi:",
-    list: [
-      "• Front End (Kotlin, React, TailwindCSS, Next.js)",
-      "• Back End (SpringBoot, Laravel, PostgreSQL, MySQL)",
-      "• Design (Figma, Canva, Photoshop, Ilustrator)",
+    category: "Backend & Database",
+    items: [
+      { name: "Node.js / Next.js API", level: "Advanced" },
+      { name: "PostgreSQL (Neon DB)", level: "Intermediate" },
+      { name: "Drizzle ORM", level: "Advanced" },
+      { name: "RESTful APIs", level: "Advanced" },
+      { name: "Go", level: "Familiar" },
+      { name: "SpringBoot", level: "Familiar" },
     ],
   },
   {
-    icon: "paintbrush",
-    title: "Desain",
-    description: "Saya dapat membantu dalam hal desain untuk bisnis Anda:",
-    list: [
-      "• Modern & Clean UI",
-      "• Responsive Layouts",
-      "• Logo Design",
-      "• Poster Design",
+    category: "Arsitektur & Tools",
+    items: [
+      { name: "Serverless Architecture", level: "Intermediate" },
+      { name: "Android Development (Kotlin)", level: "Intermediate" },
+      { name: "Git", level: "Intermediate" },
+      { name: "Figma / Design Tools", level: "Advanced" },
     ],
   },
 ];
 
 export const Skill = () => {
   return (
-    <div className="md:px-24 lg:px-48 xl:px-48 p-6 md:py-24 transition-colors duration-300 dark:bg-slate-900 ">
-      <div className="flex flex-col gap-2 md:w-2/3">
-        <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
-          Membangun Pengalaman <span className="text-emerald-600 dark:text-emerald-400">Digital</span>
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 transition-colors">
-          Saya mengkhususkan diri dalam menciptakan antarmuka pengguna yang
-          memukau dan mengembangkan aplikasi berkualitas tinggi yang menonjol.
-        </p>
+    <section className="relative w-full bg-[#0f0f11] text-zinc-100 py-32 px-6 md:px-12 lg:px-24">
+      
+      <div className="hidden md:block absolute right-8 top-32 rotate-90 origin-right text-[10px] tracking-[0.2em] text-zinc-600 uppercase">
+        02 / Keahlian
       </div>
 
-      <div className="mt-10 grid md:grid-cols-2 gap-6">
-        {skillList.map((skill, index) => (
-          <div
-            key={index}
-            className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700 shadow-md dark:shadow-slate-900/50 transition-all duration-300"
-          >
-            <div className="flex items-center gap-4">
-              <div className="text-slate-800 dark:text-slate-200">
-                <Icon name={skill.icon} size={32} />
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-serif mb-4 tracking-wide">Keahlian Utama</h2>
+          <p className="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed">
+            Fokus pada fondasi yang solid dan eksekusi yang presisi dalam setiap lapisan pengembangan.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillList.map((skill, index) => (
+            <div
+              key={index}
+              className="bg-[#18181b] p-8 rounded-2xl border border-zinc-800/50 hover:border-zinc-700 transition-colors"
+            >
+              <h3 className="text-xl font-serif mb-8 text-zinc-200">{skill.category}</h3>
+              
+              <div className="flex flex-col gap-5">
+                {skill.items.map((item, idx) => (
+                  <div key={idx} className="flex justify-between items-center group">
+                    <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">{item.name}</span>
+                    <span className="text-[10px] px-2 py-1 rounded bg-[#27272a] text-zinc-400 uppercase tracking-wider">
+                      {item.level}
+                    </span>
+                  </div>
+                ))}
               </div>
-
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">
-                {skill.title}
-              </h2>
             </div>
-
-            <p className="mt-4 text-slate-600 dark:text-slate-400 transition-colors">
-              {skill.description}
-            </p>
-
-            <div className="mt-4 pl-4 font-semibold text-gray-700 dark:text-slate-300 flex flex-col gap-1 transition-colors">
-              {skill.list.map((item, index) => (
-                <p key={index}>{item}</p>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

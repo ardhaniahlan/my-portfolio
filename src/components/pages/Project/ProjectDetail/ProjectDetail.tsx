@@ -1,160 +1,153 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { projectsData } from "../ProjectData";
-import { BlobBackground } from "../../../ui/BlopBackground";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const project = projectsData.find((p) => p.id === id);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (!project?.gallery.length) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === project.gallery.length - 1 ? 0 : prevIndex + 1,
       );
-    }, 3000);
-
+    }, 4000); 
     return () => clearInterval(interval);
   }, [project?.gallery.length]);
 
   if (!project) {
     return (
-      <div className="flex justify-center items-center h-screen flex-col">
-        <h1 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
-          Project tidak ditemukan
-        </h1>
+      <div className="flex justify-center items-center h-screen flex-col bg-[#0f0f11] text-zinc-100">
+        <h1 className="text-3xl font-serif mb-4">Proyek tidak ditemukan.</h1>
         <button
           onClick={() => navigate("/")}
-          className="text-blue-500 dark:text-blue-400 underline"
+          className="text-xs uppercase tracking-widest text-zinc-500 hover:text-white transition-colors"
         >
-          Kembali ke Home
+          [ Kembali ke Beranda ]
         </button>
       </div>
     );
   }
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === project.gallery.length - 1 ? 0 : prev + 1,
-    );
-  };
-  const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? project.gallery.length - 1 : prev - 1,
-    );
-  };
+  const nextSlide = () => setCurrentIndex((prev) => prev === project.gallery.length - 1 ? 0 : prev + 1);
+  const prevSlide = () => setCurrentIndex((prev) => prev === 0 ? project.gallery.length - 1 : prev - 1);
 
   return (
-    <div className="w-full md:px-12 lg:px-48 pb-16 p-6 pt-32 relative overflow-hidden">
-      <BlobBackground/>
-      <button
-        onClick={() => navigate(-1)}
-        className="mb-6 flex items-center gap-2 text-gray-600 dark:text-slate-400 hover:text-black dark:hover:text-white font-medium transition-colors"
-      >
-        <svg
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-        Kembali
-      </button>
-
-      <div className="flex gap-2 items-center">
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
-          {project.title}
-        </h1>
+    <div className="w-full min-h-screen bg-[#0f0f11] text-zinc-100 px-6 md:px-12 lg:px-24 pt-32 pb-24">
+      
+      <div className="max-w-7xl mx-auto">
         
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 dark:text-slate-400 hover:text-black dark:hover:text-white transition-colors"
-        >
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-        </a>
-      </div>
-      <div className="flex flex-wrap gap-2 mb-8">
-        {project.techStack.map((tech, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-emerald-50 text-emerald-700 text-sm font-medium rounded-full border border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-colors"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <div className="relative w-full aspect-video bg-gray-100 dark:bg-slate-800 rounded-xl overflow-hidden group shadow-lg dark:shadow-slate-950/50 mb-8">
-        <img
-          src={project.gallery[currentIndex]}
-          alt={`Gallery ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-all duration-500"
-        />
-
         <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/75"
+          onClick={() => navigate(-1)}
+          className="mb-12 flex items-center gap-4 text-xs font-mono uppercase tracking-[0.2em] text-zinc-500 hover:text-white transition-colors group"
         >
-          ❮
+          <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
+          Kembali
         </button>
 
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/75"
-        >
-          ❯
-        </button>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          <div className="lg:col-span-5 flex flex-col order-2 lg:order-1">
+            <div className="mb-8 border-b border-zinc-800 pb-8">
+              <h1 className="text-4xl md:text-5xl font-serif text-white leading-tight mb-6">
+                {project.title}
+              </h1>
+              
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
+                >
+                  Kunjungi Website <span className="text-lg leading-none">↗</span>
+                </a>
+              )}
+            </div>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-          {project.gallery.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentIndex === idx
-                  ? "bg-white scale-110"
-                  : "bg-white/50 hover:bg-white/75"
-              }`}
-            />
-          ))}
+            <div className="mb-10">
+              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500 mb-6">
+                Ikhtisar Proyek
+              </h3>
+              <p className="text-zinc-400 text-sm md:text-base leading-relaxed whitespace-pre-line">
+                {project.fullDescription}
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500 mb-6">
+                Teknologi & Alat
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full bg-zinc-800/60 text-zinc-300 font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 order-1 lg:order-2">
+            <div className="relative w-full h-[50vh] md:h-[65vh] bg-[#18181b] rounded-2xl overflow-hidden group shadow-2xl border border-zinc-800/80 flex justify-center items-center">
+              
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-20 blur-2xl scale-110 transition-all duration-500"
+                style={{ backgroundImage: `url(${project.gallery[currentIndex]})` }}
+              />
+
+              <img
+                src={project.gallery[currentIndex]}
+                alt={`Screenshot ${currentIndex + 1} dari ${project.title}`}
+                className="relative z-10 w-full h-full object-contain transition-all duration-700 p-2"
+              />
+
+              <button
+                onClick={prevSlide}
+                className="absolute z-20 top-1/2 left-6 -translate-y-1/2 w-10 h-10 flex justify-center items-center rounded-full bg-[#0f0f11]/80 border border-zinc-700 text-zinc-400 opacity-0 group-hover:opacity-100 transition-all hover:text-white hover:border-zinc-500"
+              >
+                ❮
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="absolute z-20 top-1/2 right-6 -translate-y-1/2 w-10 h-10 flex justify-center items-center rounded-full bg-[#0f0f11]/80 border border-zinc-700 text-zinc-400 opacity-0 group-hover:opacity-100 transition-all hover:text-white hover:border-zinc-500"
+              >
+                ❯
+              </button>
+
+              <div className="absolute z-20 bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {project.gallery.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`h-1 rounded-full transition-all duration-500 ${
+                      currentIndex === idx
+                        ? "w-8 bg-zinc-300"
+                        : "w-2 bg-zinc-700 hover:bg-zinc-500"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex justify-between items-center mt-4">
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">
+                Arsip Visual
+              </span>
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">
+                0{currentIndex + 1} — 0{project.gallery.length}
+              </span>
+            </div>
+          </div>
+
         </div>
-      </div>
-
-      <div>
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-3">
-          Tentang Project
-        </h2>
-        <p className="text-gray-600 dark:text-slate-300 leading-relaxed whitespace-pre-line">
-          {project.fullDescription}
-        </p>
       </div>
     </div>
   );

@@ -10,21 +10,28 @@ import b5 from "../../../assets/bookingapp/b5.png";
 import b6 from "../../../assets/bookingapp/b6.png";
 import b7 from "../../../assets/bookingapp/b7.png";
 
-import h1 from "../../../assets/helpdesk/h1.png"
-import h2 from "../../../assets/helpdesk/h2.png"
-import h3 from "../../../assets/helpdesk/h3.png"
-import h4 from "../../../assets/helpdesk/h4.png"
-import h5 from "../../../assets/helpdesk/h5.png"
-import h6 from "../../../assets/helpdesk/h6.png"
-import h7 from "../../../assets/helpdesk/h7.png"
+import h1 from "../../../assets/helpdesk/h1.png";
+import h2 from "../../../assets/helpdesk/h2.png";
+import h3 from "../../../assets/helpdesk/h3.png";
+import h4 from "../../../assets/helpdesk/h4.png";
+import h5 from "../../../assets/helpdesk/h5.png";
+import h6 from "../../../assets/helpdesk/h6.png";
+import h7 from "../../../assets/helpdesk/h7.png";
 
-import p1 from "../../../assets/managementapp/p1.png"
-import p2 from "../../../assets/managementapp/p2.png"
-import p3 from "../../../assets/managementapp/p3.png"
-import p4 from "../../../assets/managementapp/p4.png"
-import p5 from "../../../assets/managementapp/p5.png"
-import p6 from "../../../assets/managementapp/p6.png"
-import p7 from "../../../assets/managementapp/p7.png"
+import p1 from "../../../assets/managementapp/p1.png";
+import p2 from "../../../assets/managementapp/p2.png";
+import p3 from "../../../assets/managementapp/p3.png";
+import p4 from "../../../assets/managementapp/p4.png";
+import p5 from "../../../assets/managementapp/p5.png";
+import p6 from "../../../assets/managementapp/p6.png";
+import p7 from "../../../assets/managementapp/p7.png";
+
+import t1 from "../../../assets/tiketqu/t1.png";
+import t2 from "../../../assets/tiketqu/t2.png";
+import t3 from "../../../assets/tiketqu/t3.png";
+import t4 from "../../../assets/tiketqu/t4.png";
+import t5 from "../../../assets/tiketqu/t5.png";
+import t6 from "../../../assets/tiketqu/t6.png";
 
 import type { ReactNode } from "react";
 
@@ -40,6 +47,39 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  {
+    id: "tiketqu-ticketing-system",
+    title: "TiketQu: Neo-Brutalism Event Ticketing & Payment",
+    description: "Platform penjualan tiket event serbaguna terintegrasi Payment Gateway dengan UI/UX Neo-Brutalism.",
+    fullDescription: (
+      <>
+        Sebuah platform <em>ticketing</em> serbaguna (Konser, Seminar, Olahraga) yang mengusung gaya desain 
+        <strong> Neo-Brutalism</strong> yang unik, interaktif, dan modern. Dibangun menggunakan arsitektur 
+        <strong> Next.js (App Router)</strong> dan <strong>PostgreSQL (Drizzle ORM)</strong>.
+        <br /><br />
+        Fitur utamanya meliputi: Sistem Autentikasi menggunakan <strong>NextAuth (Google OAuth)</strong>, integrasi 
+        <em> Payment Gateway</em> <strong>Midtrans Sandbox</strong> untuk validasi pembayaran secara otomatis 
+        (mendukung Virtual Account, GoPay, QRIS, dll), dan penerbitan <em>E-Ticket</em> interaktif yang bisa diakses pada Gmail.
+        <br /><br />
+        Dilengkapi dengan panel Admin komprehensif untuk manajemen <em>event</em> (CRUD), pelacakan status transaksi 
+        pengguna secara <em>real-time</em>, optimasi performa dengan <em>Server-side Pagination</em>, dan integrasi 
+        titik koordinat <strong>Google Maps (Embed iFrame)</strong> secara dinamis ke dalam halaman detail tiket.
+      </>
+    ),
+    url: "https://tiketqu-next-js.vercel.app/",
+    thumbnail: t1,
+    gallery: [t1, t2, t3, t4, t5, t6],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Neon DB",
+      "NextAuth.js",
+      "Midtrans API",
+    ],
+  },
   {
     id: "ecommerce-lite",
     title: "E-Commerce Lite",
@@ -74,7 +114,7 @@ export const projectsData: Project[] = [
       "Zod",
     ],
   },
-    {
+  {
     id: "booking-app",
     title: "Booking App Full-Stack",
     description: "Platform marketplace untuk sewa alat dan venue",

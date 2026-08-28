@@ -1,160 +1,122 @@
-import { Link } from "react-router-dom";
 import { aboutData } from "./AboutData";
-import { BlobBackground } from "../../ui/BlopBackground";
 
 export const About = () => {
   return (
-    <div className="relative w-full md:px-24 lg:px-48 xl:px-48 pt-32 pb-16 p-6 lg:pt-32 xl:pt-32 overflow-hidden">
-      
-      <BlobBackground/>
+    <div className="w-full bg-[#0f0f11] text-zinc-100 min-h-screen px-6 md:px-12 lg:px-24 pt-32 pb-32 overflow-hidden selection:bg-zinc-700">
+      <div className="max-w-6xl mx-auto">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center mb-32">
+          
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-[1.1] mb-8 text-white">
+              {aboutData.headline}
+            </h1>
+            <div className="space-y-6 text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl">
+              <p>{aboutData.bioParagraph1}</p>
+              <p>{aboutData.bioParagraph2}</p>
+            </div>
+          </div>
 
-      <div className="flex flex-col gap-2 md:w-2/3 mb-12 fade-up relative z-10">
-        <h1 className="text-3xl font-bold md:text-4xl text-slate-900 dark:text-white transition-colors">
-          Tentang{" "}
-          <span className="text-emerald-600 dark:text-emerald-400">Saya</span>
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 transition-colors">
-          Kenalan lebih dekat dengan saya.
-        </p>
-      </div>
-
-      <div className="grid lg:grid-cols-[minmax(0,300px)_1fr] gap-8 lg:gap-16 relative z-10">
-        <div className="lg:sticky lg:top-28 lg:self-start flex flex-col gap-6 fade-up">
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-4xl bg-linear-to-br from-emerald-400/20 via-emerald-500/5 to-transparent blur-xl -z-10" />
-            <div className="relative w-full aspect-4/5 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200/70 dark:ring-slate-700/70 shadow-xl shadow-slate-900/5">
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-100 aspect-4/5 rounded-xl overflow-hidden border border-zinc-800/80 shadow-2xl">
               <img
                 src={aboutData.photo}
-                alt={aboutData.name}
-                className="w-full h-full object-cover object-top"
+                alt="Ardhani Ahlan"
+                className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-slate-900/50 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="inline-flex items-center gap-1.5 text-[11px] font-medium text-white/90 bg-black/25 backdrop-blur-sm rounded-full px-2.5 py-1">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  </span>
-                  Open to work
-                </p>
+              <div className="absolute inset-0 bg-linear-to-t from-[#0f0f11]/80 via-transparent to-transparent" />
+            </div>
+          </div>
+
+        </div>
+
+        <div className="w-full bg-[#18181b] rounded-3xl border border-zinc-800/60 p-8 md:p-16 mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          <div className="hidden lg:flex justify-center items-center opacity-30">
+            <div className="relative w-64 h-64 border border-zinc-600 rounded-full flex justify-center items-center">
+              <div className="w-48 h-48 border border-zinc-600 rounded-full flex justify-center items-center">
+                <div className="w-16 h-16 bg-zinc-600 rounded-full"></div>
+              </div>
+              <div className="absolute w-full h-px bg-zinc-600"></div>
+              <div className="absolute h-full w-px bg-zinc-600"></div>
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-serif text-white mb-6">
+              {aboutData.philosophyTitle}
+            </h2>
+            <div className="space-y-4 text-zinc-400 text-sm leading-relaxed mb-10">
+              <p>{aboutData.philosophyText1}</p>
+              <p>{aboutData.philosophyText2}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {aboutData.philosophyTags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="px-4 py-2 rounded-full bg-[#27272a]/50 border border-zinc-700/50 text-zinc-300 text-[11px] font-medium tracking-wide"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        <div>
+          <div className="text-center mb-16">
+            <h2 className="text-2xl font-serif text-white mb-4">Latar Belakang</h2>
+            <div className="w-12 h-px bg-zinc-700 mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            
+            <div className="bg-[#18181b] rounded-2xl border border-zinc-800/60 p-8 md:p-12 h-full">
+              <h3 className="text-xl font-serif text-white mb-8">
+                {aboutData.journeyTitle}
+              </h3>
+              <div className="space-y-6 text-zinc-400 text-sm leading-relaxed">
+                <p>{aboutData.journeyText1}</p>
+                <p>{aboutData.journeyText2}</p>
+                <p>{aboutData.journeyText3}</p>
               </div>
             </div>
-          </div>
 
-          <div className="px-1">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              {aboutData.name}
-            </h2>
-            <p className="text-emerald-600 dark:text-emerald-400 font-medium text-sm mt-0.5">
-              {aboutData.role}
-            </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 flex items-center gap-1.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" strokeWidth="2"/>
-                <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="2"/>
-              </svg>
-              {aboutData.location}
-            </p>
-          </div>
+            <div className="bg-[#18181b] rounded-2xl border border-zinc-800/60 p-8 md:p-12 h-full">
+              <div className="flex items-center gap-3 mb-10">
+                <svg className="w-5 h-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+                <h3 className="text-xl font-serif text-white">Pendidikan</h3>
+              </div>
 
-          <Link
-            to="/"
-            state={{ scrollTo: "contact" }}
-            className="group flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white text-sm font-medium transition-all hover:shadow-lg hover:shadow-emerald-600/25"
-          >
-            Kontak Saya
-          </Link>
-        </div>
-
-        <div className="flex flex-col gap-14">
-          <div className="relative pl-6 border-l-2 border-emerald-500 fade-up" style={{ animationDelay: "80ms" }}>
-            <span className="absolute -top-3 -left-1 text-5xl font-serif text-emerald-500/15 dark:text-emerald-400/15 select-none leading-none">
-              &ldquo;
-            </span>
-            <p className="text-lg md:text-xl text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
-              {aboutData.bio}
-            </p>
-          </div>
-
-          <div className="fade-up" style={{ animationDelay: "140ms" }}>
-            <div className="flex items-baseline gap-3 mb-6">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-white">
-                Pendidikan
-              </h3>
-              <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
-            </div>
-
-            <div className="relative flex flex-col gap-6 before:absolute before:left-1.25 before:top-2 before:bottom-2 before:w-px before:bg-slate-200 dark:before:bg-slate-800">
-              {aboutData.education.map((edu, i) => (
-                <div key={i} className="relative flex items-start gap-4 pl-6">
-                  <span className="absolute left-0 top-1.5 w-2.75 h-2.75 rounded-full bg-white dark:bg-slate-900 ring-2 ring-emerald-500" />
-                  <div className="flex-1 flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                        {edu.university}
-                      </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                        {edu.major}
-                      </p>
-                    </div>
-                    <span className="shrink-0 text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">
+              <div className="relative pl-4 border-l border-zinc-800 space-y-10">
+                {aboutData.education.map((edu, idx) => (
+                  <div key={idx} className="relative">
+                    <div className="absolute -left-5.25 top-1.5 w-2.5 h-2.5 rounded-full bg-zinc-500 ring-4 ring-[#18181b]" />
+                    
+                    <span className="text-[10px] font-mono tracking-widest text-zinc-500 mb-2 block">
                       {edu.year}
                     </span>
+                    <h4 className="text-base font-medium text-zinc-200 mb-1">
+                      {edu.title}
+                    </h4>
+                    <h5 className="text-sm text-zinc-400 mb-3">
+                      {edu.subtitle}
+                    </h5>
+                    <p className="text-[13px] text-zinc-500 leading-relaxed italic">
+                      {edu.description}
+                    </p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="fade-up" style={{ animationDelay: "200ms" }}>
-            <div className="flex items-baseline gap-3 mb-6">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-white">
-                Fun Facts
-              </h3>
-              <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
+                ))}
+              </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-3">
-              {aboutData.funFacts.map((fact, i) => (
-                <div
-                  key={i}
-                  className="group p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-sm text-slate-600 dark:text-slate-400 leading-relaxed transition-all hover:bg-emerald-50 dark:hover:bg-emerald-500/10 hover:text-slate-700 dark:hover:text-slate-300 z-10 relative"
-                >
-                  {fact}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="fade-up" style={{ animationDelay: "260ms" }}>
-            <div className="flex items-baseline gap-3 mb-6">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-900 dark:text-white">
-                Tech Stack
-              </h3>
-              <div className="flex-1 h-px bg-slate-200 dark:bg-slate-800" />
-            </div>
-
-            <div className="flex flex-col gap-5">
-              {aboutData.techStack.map((stack) => (
-                <div key={stack.category} className="flex flex-col sm:flex-row sm:items-center gap-3">
-                  <p className="text-xs text-slate-500 dark:text-slate-400 sm:w-32 shrink-0">
-                    {stack.category}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {stack.items.map((item) => (
-                      <span
-                        key={item}
-                        className={`text-xs px-2.5 py-1 rounded-full font-medium transition-transform hover:-translate-y-0.5 ${stack.color}`}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

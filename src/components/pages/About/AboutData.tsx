@@ -1,51 +1,33 @@
 import profile from "../../../assets/test.png";
-
 export const aboutData = {
-  name: "Ardhani Ahlan",
-  role: "Programmer",
-  location: "Bekasi, Indonesia",
-  bio: "Programmer dengan pengalaman membangun aplikasi end-to-end di berbagai platform web menggunakan React.js dan Next.js, serta Android menggunakan Kotlin dan Jetpack Compose. Alumni Bangkit Academy 2023 (Google, GoTo, Traveloka). Terbiasa mengintegrasikan RESTful API, membangun antarmuka yang responsif, dan berkolaborasi dalam tim lintas disiplin. Percaya bahwa kode yang bersih dan arsitektur yang solid adalah kunci untuk menciptakan pengalaman pengguna yang optimal.",
   photo: profile,
-  funFacts: [
-    "Percaya hidup sehat = kode yang sehat juga — rutin workout dan jogging di sela coding",
-    "Suka eksplorasi teknologi baru di waktu luang",
-    "Punya prinsip: UX yang baik lahir dari kode yang bersih, bukan sebaliknya",
-  ],
+  
+  headline: "Membangun harmoni antara logika kode dan estetika desain.",
+  bioParagraph1: "Saya Ardhani Ahlan, seorang pengembang perangkat lunak yang berfokus pada pengalaman pengguna. Bagi saya, kode bukan sekadar deretan instruksi untuk mesin, melainkan medium untuk menceritakan kisah yang memecahkan masalah kompleks dengan keanggunan sederhana.",
+  bioParagraph2: "Berbasis di Bekasi, Indonesia, perjalanan saya di dunia teknologi didorong oleh rasa ingin tahu yang tak berkesudahan tentang bagaimana kita berinteraksi dengan dunia digital.",
+  
+  philosophyTitle: "Filosofi",
+  philosophyText1: "Saya percaya bahwa perangkat lunak terbaik adalah yang terasa tak terlihat. Ketika antarmuka merespons secara intuitif dan performa terasa instan, pengguna dapat fokus sepenuhnya pada tujuan mereka.",
+  philosophyText2: "Pendekatan saya selalu menggabungkan ketelitian teknis dengan empati pengguna. Saya menghabiskan waktu tidak hanya menyempurnakan algoritma, tetapi juga mempertimbangkan tipografi, ruang putih, dan ritme interaksi. Kualitas sejati terletak pada detail-detail kecil yang sering kali terabaikan.",
+  philosophyTags: ["Minimalisme Fungsional", "Kinerja Optimal", "Desain Inklusif"],
+
+  journeyTitle: "Perjalanan Menuju Kode",
+  journeyText1: "Awal ketertarikan saya pada teknologi bukan bermula dari baris kode, melainkan dari rasa frustrasi terhadap perangkat lunak yang rumit. Saya selalu bertanya, \"Mengapa ini harus sesulit ini?\"",
+  journeyText2: "Pertanyaan itu mendorong saya untuk mulai membongkar situs web, mempelajari cara kerja aplikasi secara otodidak, hingga akhirnya menyelami struktur arsitektur sistem. Setiap langkah adalah proses penemuan, mengubah rasa frustrasi menjadi kemampuan untuk menciptakan solusi.",
+  journeyText3: "Kini, setelah bertahun-tahun merangkai logika, saya menemukan bahwa kepuasan terbesar bukan pada seberapa kompleks sistem yang saya bangun, melainkan seberapa sederhana sistem tersebut terasa bagi penggunanya.",
+
   education: [
     {
-      university: "Universitas Telkom",
-      major: "S1 Informatika",
       year: "2023 - 2025",
+      title: "Universitas Telkom",
+      subtitle: "S1 Informatika",
+      description: "Fokus pada arsitektur sistem modern, rekayasa perangkat lunak skala besar, dan optimasi algoritma komputasi.",
     },
     {
-      university: "Universitas Telkom",
-      major: "D3 Rekayasa Perangkat Lunak Aplikasi",
-      year: "2020 – 2023",
-    },
-  ],
-  techStack: [
-    {
-      category: "Mobile",
-      color:
-        "bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400",
-      items: ["Kotlin Native", "Jetpack Compose"],
-    },
-    {
-      category: "Backend",
-      color: "bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400",
-      items: ["Java Spring Boot", "PostgreSQL", "Firebase", "Laravel", "MySQL", "Go"],
-    },
-    {
-      category: "Frontend",
-      color:
-        "bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400",
-      items: ["React", "Next.js", "Tailwind CSS", ],
-    },
-    {
-      category: "Tools",
-      color:
-        "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300",
-      items: ["Figma", "Git", "Android Studio", "Antigravity", "Postman"],
-    },
+      year: "2020 - 2023",
+      title: "Universitas Telkom",
+      subtitle: "D3 Rekayasa Perangkat Lunak Aplikasi",
+      description: "Membangun fondasi kuat dalam pengembangan aplikasi web dan mobile serta manajemen basis data relasional.",
+    }
   ],
 };

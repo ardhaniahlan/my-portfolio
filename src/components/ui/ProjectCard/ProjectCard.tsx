@@ -1,51 +1,49 @@
-import { useNavigate } from 'react-router-dom';
-import type { Project } from '../../pages/Project/ProjectData';
+import { Link } from "react-router-dom";
+import type { Project } from "../../pages/Project/ProjectData";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const navigate = useNavigate();
-
-  const handleNavigate = () => navigate(`/project/${project.id}`);
-
   return (
-    <div
-      onClick={handleNavigate}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && handleNavigate()}
-      className="group relative overflow-hidden rounded-xl shadow-md dark:shadow-slate-950/50 cursor-pointer aspect-video bg-gray-200 dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
-    >
-      <img
-        src={project.thumbnail}
-        alt={project.title}
-        loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
-
-      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-4">
-        <h3 className="text-lg font-bold text-white drop-shadow-sm transition-transform duration-300 group-hover:-translate-y-1">
-          {project.title}
-        </h3>
-
-        <div className="flex flex-wrap gap-2 mt-2 max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 overflow-hidden transition-all duration-300 delay-75">
-          {project.techStack.slice(0, 4).map((tech, index) => (
-            <span
-              key={index}
-              className="px-2.5 py-1 bg-white/20 text-white text-xs font-medium rounded-full backdrop-blur-sm"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.techStack.length > 4 && (
-            <span className="px-2.5 py-1 bg-white/20 text-white text-xs font-medium rounded-full backdrop-blur-sm">
-              +{project.techStack.length - 4}
-            </span>
-          )}
+    <Link to={`/project/${project.id}`} className="block group">
+      <div className="bg-[#18181b] p-6 rounded-2xl border border-zinc-800/60 hover:border-zinc-700 transition-colors h-full flex flex-col">
+        
+        <div className="w-full aspect-video bg-[#0f0f11] rounded-xl mb-6 overflow-hidden relative border border-zinc-800/50">
+          <img
+            src={project.thumbnail}
+            alt={project.title}
+            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+          />
         </div>
+
+        <div className="flex flex-col grow">
+          <h2 className="text-2xl font-serif text-zinc-100 mb-3 group-hover:text-white transition-colors">
+            {project.title}
+          </h2>
+          <p className="text-sm text-zinc-400 leading-relaxed mb-6 grow">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mt-auto pt-4">
+            {project.techStack.slice(0, 3).map((tech, index) => (
+              <span
+                key={index}
+                className="text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full bg-zinc-800/60 text-zinc-300 font-medium"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.techStack.length > 3 && (
+              <span className="text-[10px] uppercase tracking-wider px-3 py-1.5 rounded-full bg-zinc-800/60 text-zinc-400 font-medium">
+                +{project.techStack.length - 3}
+              </span>
+            )}
+          </div>
+        </div>
+        
       </div>
-    </div>
+    </Link>
   );
 };
