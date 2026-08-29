@@ -21,13 +21,13 @@ export const aboutData = {
       year: "2023 - 2025",
       title: "Universitas Telkom",
       subtitle: "S1 Informatika",
-      description: "Fokus pada arsitektur sistem modern, rekayasa perangkat lunak skala besar, dan optimasi algoritma komputasi.",
+      description: "Berfokus pada pendalaman teoretis ilmu komputer, meliputi analisis kompleksitas algoritma, struktur data tingkat lanjut, dan eksplorasi pemodelan Machine Learning.",
     },
     {
       year: "2020 - 2023",
       title: "Universitas Telkom",
       subtitle: "D3 Rekayasa Perangkat Lunak Aplikasi",
-      description: "Membangun fondasi kuat dalam pengembangan aplikasi web dan mobile serta manajemen basis data relasional.",
+      description: "Menitikberatkan pada implementasi praktis rekayasa perangkat lunak, mencakup pengembangan aplikasi web dan mobile secara end-to-end, serta pengintegrasian Internet of Things (IoT).",
     }
   ],
 };
